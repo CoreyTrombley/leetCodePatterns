@@ -1,0 +1,20 @@
+{
+  "name": "leetcode-patterns",
+  "version": "1.0.0",
+  "description": "Structured coding patterns with problems and solutions (two pointers, prefix sum, etc.)",
+  "private": true,
+  "scripts": {
+    "solve": "node scripts/run.js",
+    "list": "node scripts/list.js",
+    "twoPointers:validPalindrome": "ts-node --transpile-only twoPointers/validPalindrome/index.ts",
+    "twoPointers:removeDupes": "ts-node --transpile-only twoPointers/removeDupes/index.ts",
+    "twoPointers:moveZeros": "ts-node --transpile-only twoPointers/moveZeros/index.ts",
+    "prefixSum:countSubarrays": "ts-node --transpile-only prefixSum/countSubarrays/index.ts",
+    "prefixSum:heatmapQueries": "ts-node --transpile-only prefixSum/heatmapQueries/index.ts",
+    "prefixSum:signalStability": "ts-node --transpile-only prefixSum/signalStability/index.ts"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}

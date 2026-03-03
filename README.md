@@ -88,3 +88,35 @@ npm run list
 | “Total in range l..r” over static data | Prefix sum |
 
 Start with the pattern README (e.g. [Two Pointers](twoPointers/README.md) or [Prefix Sum](prefixSum/README.md)), then open a problem folder for the full problem and solution.
+
+---
+
+## Contributing
+
+We welcome new patterns and problems. Please follow the structure below and use the [PR template](.github/PULL_REQUEST_TEMPLATE.md) when opening a pull request.
+
+### Adding a new pattern
+
+1. Create a folder under the repo root, e.g. `slidingWindow/`.
+2. Add `slidingWindow/README.md` with:
+   - When to use the pattern
+   - Main ideas and invariants
+   - Common pitfalls
+3. Add each problem as a subfolder: `slidingWindow/maxSubarray/` with `README.md` (problem statement, examples, constraints) and `index.ts` (solution + test harness).
+4. In your PR, add an npm script in `package.json` for each new problem, e.g. `"slidingWindow:maxSubarray": "ts-node --transpile-only slidingWindow/maxSubarray/index.ts"`.
+5. Update the root README: add the pattern under **Patterns** and list the new problems in the table.
+
+### Adding a new problem to an existing pattern
+
+1. Create `<pattern>/<problem>/` with:
+   - **README.md** — Problem statement, examples, constraints, solution notes.
+   - **index.ts** — Same structure as existing problems: header comment, exported solution, test harness with `TestCase`, `run()`, and `run();` at the end.
+2. In your PR, add a script in `package.json`, e.g. `"<pattern>:<problem>": "ts-node --transpile-only <pattern>/<problem>/index.ts"`.
+3. Update the root README table for that pattern to include the new problem.
+4. Optionally update `scripts/list.js` if you introduce a new pattern (it already discovers all folders under `twoPointers` and `prefixSum`; add the new pattern name to the list there).
+
+### PR requirements
+
+- Use the [pull request template](.github/PULL_REQUEST_TEMPLATE.md).
+- **Pattern** and **Problem / problem space** must be clearly filled in so reviewers know where the change lives and what problem it solves.
+- New code should follow the existing test harness style (see e.g. [twoPointers/validPalindrome/index.ts](twoPointers/validPalindrome/index.ts)).
